@@ -1,0 +1,40 @@
+var metroLima: [String: [String]] = [
+    "Linea 1": ["Villa El Salvador", "Pumacahua", "Jorge Chávez", "Angamos", "La Cultura","28 De Julio","Nicolas Arriola", "Grau","El Angel", "Presbítero Maestro","Caja de agua","Piramide del Sol","Los Jardines","Los Postes","San Carlos","San Martin","Santa Rosa", "Bayóvar"],
+    "Linea 2": ["Puerto del Callao", "Insurgentes", "Oscar Benavides", "San Juan de Dios", "Evitamiento", "Santa Anita", "Mercado Santa Anita", "Municipalidad de Ate"],
+    "Linea 3": ["Ancón", "Chillón", "Naranjal", "Carlos Izaguirre", "Panamericana Norte", "Tacna", "Arequipa", "Pardo", "Javier Prado", "Pedro Miotta"],
+    "Linea 4": ["Gambetta", "Canta Callao", "Bocanegra", "Aeropuerto", "El Olivar", "Quilca", "Morales Duárez", "Pino"]
+]
+
+print("SISTEMA METRO DE LIMA 2040")
+
+let lineaConsultada = "Linea 2"
+if let estaciones = metroLima[lineaConsultada] {
+    print("\nEstaciones de la \(lineaConsultada):")
+    print(estaciones.joined(separator: ", "))
+}
+
+let estacionBuscar = "Javier Prado"
+print("\n")
+print("Buscando a qué líneas pertenece la estación '\(estacionBuscar)':")
+
+for (linea, estaciones) in metroLima {
+    if estaciones.contains(estacionBuscar) {
+        print("+ Pertenece a la \(linea)")
+    }
+}
+
+let estacionEspecifica = "Aeropuerto"
+let lineaEspecifica = "Linea 4"
+
+if let lista = metroLima[lineaEspecifica], lista.contains(estacionEspecifica) {
+    print("\n")
+    print("La estación \(estacionEspecifica) está en la \(lineaEspecifica)")
+} else {
+    print("\n")
+    print("La estación \(estacionEspecifica) no pertenece a la \(lineaEspecifica)")
+}
+
+let lineaConteo = "Linea 3"
+if let cantidad = metroLima[lineaConteo]?.count {
+    print("\nLa \(lineaConteo) tiene un total de \(cantidad) estaciones proyectadas")
+}
