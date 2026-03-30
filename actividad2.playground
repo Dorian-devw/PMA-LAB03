@@ -1,0 +1,23 @@
+var hurin: Set = ["Manco Cápac", "Sinchi Roca", "Lloque Yupanqui", "Mayta Cápac", "Cápac Yupanqui"]
+var hanan: Set = ["Inca Roca", "Yahuar Huácac", "Huiracocha", "Pachacútec", "Inca Yupanqui", "Túpac Inca Yupanqui", "Huayna Cápac", "Huáscar", "Atahualpa"]
+
+print("\n")
+let buscador = "Atahualpa"
+if hanan.contains(buscador) {
+    print("\(buscador) pertenece a la dinastía Hanan.")
+}
+
+let todosLosIncas = hurin.union(hanan)
+
+print("lista completa")
+for nombre in todosLosIncas {
+    print("- \(nombre)")
+}
+
+print("\n")
+print("Incas con nombre Yupanqui")
+for nombre in todosLosIncas {
+    if nombre.uppercased().contains("YUPANQUI") {
+        print("+ \(nombre)")
+    }
+}
