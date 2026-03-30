@@ -1,0 +1,37 @@
+var paises = ["Argentina", "Colombia", "Bolivia", "Chile", "Ecuador", "Uruguay", "Perú", "Paraguay","Brasil", "Venezuela"]
+var gdp2025 = [683.371, 438.121, 57.086, 347.174, 130.529, 87.410, 318.480, 51.543, 2256.910, 82.767]
+
+print("El GDP de Bolivia en 2025 es: \(gdp2025[2])")
+
+gdp2025[6] = 326.608
+print("El GDP de Perú en 2026 será: \(gdp2025[6])")
+
+gdp2025[6] = 318.480
+print("El GDP de Perú volvió a ser: \(gdp2025[6]) del 2025")
+
+var suma = 0.0
+for valor in gdp2025 {
+    suma = suma + valor
+}
+var promedio = suma / Double(gdp2025.count)
+print("El promedio del GDP es: \(promedio)")
+
+let sumaConReduce = gdp2025.reduce(0.0, +)
+let promedioReduce = sumaConReduce / Double(gdp2025.count)
+print("El promedio usando Reduce es: \(promedioReduce)")
+
+if let gdpMaximo = gdp2025.max() {
+    print("El valor de GDP más alto es: \(gdpMaximo)")
+}
+
+print("Países con GDP mayor a 300:")
+for i in 0..<paises.count {
+    if gdp2025[i] > 300.0 {
+        print("- \(paises[i]): \(gdp2025[i])")
+    }
+}
+
+print("Lista de países de mayor a menor GDP:")
+let indicesOrdenados = gdp2025.indices.sorted { gdp2025[$0] > gdp2025[$1] }
+
+for i in indicesOrdenados { print("\(paises[i]): \(gdp2025[i])")}
