@@ -1,0 +1,29 @@
+let conectores = ["to", "is", "in", "are", "a"]
+let diccionario = [
+    "welcome": "Bienvenido",
+    "today": "hoy",
+    "beautiful": "lindo",
+    "day": "día",
+    "we": "nosotros",
+    "learning": "aprendiendo"
+]
+
+func traducir(frase: String) {
+    let palabras = frase.split(separator: " ")
+    
+    print("")
+    for palabra in palabras {
+        let minuscula = palabra.lowercased()
+        
+        if !conectores.contains(minuscula) {
+            let traduccion = diccionario[minuscula] ?? String(palabra)
+            print(traduccion)
+        }
+    }
+}
+
+let texto1 = "Welcome to Tecsup today is a beautiful day"
+let texto2 = "In Tecsup we are learning Swift"
+
+traducir(frase: texto1)
+traducir(frase: texto2)
